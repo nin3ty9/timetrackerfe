@@ -1,6 +1,6 @@
 import { Duration } from 'luxon';
 
-export function formatDuration(isoDuration: string): string {
-  const dur = Duration.fromISO(isoDuration).shiftTo('hours', 'minutes', 'seconds');
+export function formatDuration(seconds: number): string {
+  const dur = Duration.fromObject({ seconds }).shiftTo('hours', 'minutes', 'seconds');
   return dur.toHuman();
 }

@@ -4,6 +4,8 @@ import Start from './pages/Start';
 import Activities from './pages/Activities';
 import ActSessions from './pages/ActSessions';
 import Menu from './Menu';
+import TotalStatistics from './pages/TotalStatistics';
+import WeeklyStatistics from './pages/WeeklyStatistics';
 
 function App() {
 
@@ -47,7 +49,9 @@ function App() {
         {
           "start": <Start />,
           "activities": <Activities />,
-          "actSessions": <ActSessions />
+          "actSessions": <ActSessions />,
+          "totalStatistics": <TotalStatistics />,
+          "weeklyStatistics": <WeeklyStatistics />
           // "admin": <Admin />
         } [page] || <Start /> //Default-värde för säkerhets skull
       }

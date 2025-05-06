@@ -5,5 +5,5 @@ export interface ActSession {
   activity: Activity;
   actStart: string;   // ISO 8601 string (ex: "2024-05-05T12:00:00")
   actEnd: string;     // ISO string
-  duration: string;   // ISO duration stored as ISO-8601
+  durationSeconds: number;
 }
