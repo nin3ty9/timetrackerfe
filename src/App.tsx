@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
 import './App.css'
-import Start from './Start';
-import Activities from './Activities';
-import ActSessions from './ActSessions';
+import Start from './pages/Start';
+import Activities from './pages/Activities';
+import ActSessions from './pages/ActSessions';
 import Menu from './Menu';
 
 function App() {
@@ -29,7 +29,7 @@ function App() {
 
     window.history.pushState(
       null, "", "?page=" + pageUrl
-    )
+    );
 //Denna useEffekt lyssnar på state:t page, dvs vilken sida som är laddad:
   }, [page])
 
@@ -37,7 +37,7 @@ function App() {
   return (
     <>
       <h1>Time Tracker</h1>
-      {/* Vi skickar in props:en admin och setPage så vi kan använda dem i Menu-komponenten: */}
+      {/* Vi skickar in props:en setPage så vi kan använda den i Menu-komponenten: */}
       <Menu setPage={setPage} />
       {/* <div>
         <h2>Page: {page}</h2>
@@ -47,13 +47,13 @@ function App() {
         {
           "start": <Start />,
           "activities": <Activities />,
-          "actSessions": <ActSessions />,
+          "actSessions": <ActSessions />
           // "admin": <Admin />
         } [page] || <Start /> //Default-värde för säkerhets skull
       }
 
     </>
-  )
+  );
 }
 
 export default App
