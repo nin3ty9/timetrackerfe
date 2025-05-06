@@ -9,6 +9,8 @@ function Menu(props: Props) {
             <button onClick={() => props.setPage("start")}>Start</button>
             <button onClick={() => props.setPage("activities")}>Activities</button>
             <button onClick={() => props.setPage("actSessions")}>Activity Sessions</button>
+            <button onClick={() => props.setPage("totalStatistics")}>Total Statistics</button>
+            <button onClick={() => props.setPage("weeklyStatistics")}>Weekly Statistics</button>
         </div>
     );
 }

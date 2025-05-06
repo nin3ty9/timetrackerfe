@@ -11,9 +11,9 @@ function ActSessions() {
     //useEffect som vid sidladdning hämtar aktivitetssessioner från databasen och lagrar dem i listan:
     useEffect(() => {
         fetch("http://localhost:8080/api/actSessions")
-        .then(res => res.json())
-        .then(data => setActSessions(data));
-    });
+          .then(res => res.json())
+          .then(data => setActSessions(data));
+      });
 
     return (
         <div>
@@ -24,9 +24,9 @@ function ActSessions() {
             {/* Mappar sessionerna i listan till varsin div för att rendera aktivitetsnamnen: */}
             {actSessions.map((actSession: ActSession) => (
                     <div key={actSession.sessionId}>{actSession.activity.activityName}
-                    <p>{formatDuration(actSession.duration)}</p>
+                    <p>{formatDuration(actSession.durationSeconds)}</p>
                     </div>
-                ))};
+                ))}
         </div>
     );
 }
