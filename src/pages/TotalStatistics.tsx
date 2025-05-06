@@ -19,7 +19,7 @@ function TotalStatistics() {
             <h2>Total activity sessions:</h2>
             {/* Mappar sessionerna i listan till varsin div för att rendera aktivitetsnamnen: */}
             {Array.from(activityTotals.entries()).map(([activityName, totalDuration]) => (
-                <li key={activityName}>
+                <li className="flex" key={activityName}>
                     {activityName}: {formatDuration(totalDuration)} seconds
                 </li>
             ))}

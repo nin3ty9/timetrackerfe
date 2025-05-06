@@ -35,6 +35,7 @@ function AddActSessionForm() {
         };
         
         return (
+          <div>
             <form onSubmit={handleSubmit}>
               <select value={selectedActivityId} onChange={e => setSelectedActivityId(e.target.value)}
               required>
@@ -57,7 +58,8 @@ function AddActSessionForm() {
                 required/>
               <button>Save Session</button>
             </form>
-          );
+          </div>
+        );
 }
 
 export default AddActSessionForm;

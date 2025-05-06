@@ -35,7 +35,7 @@ function WeeklyStatistics() {
           <h3>{selectedWeek}</h3>
           <ul>
             {Object.entries(weeklyStats[selectedWeek] || {}).map(([activityName, seconds]) => (
-              <li key={activityName}>
+              <li className="flex" key={activityName}>
                 {activityName}: {formatDuration(seconds)}
               </li>
             ))}
