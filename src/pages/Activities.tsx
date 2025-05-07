@@ -64,7 +64,8 @@ function Activities() {
             ) : (
                 <div className="flex" key={activity.id}>
                     {activity.activityName}
-                    <button className="btns" onClick={() => startEditing(activity.id, activity.activityName)}>Edit</button>
+                    <button className="btns" onClick={() =>
+                        startEditing(activity.id, activity.activityName)}>Edit</button>
                 </div>
                 )
             )}
