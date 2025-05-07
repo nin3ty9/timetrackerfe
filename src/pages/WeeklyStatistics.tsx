@@ -18,11 +18,13 @@ function WeeklyStatistics() {
       <h2>Weekly Activity sessions</h2>
 
         <div>
-            <label>Select week: </label>
+            <label>Statistics for week </label>
             <select value={selectedWeek} onChange={e => setSelectedWeek(e.target.value)}
             required>
             <option value="" disabled>Select week</option>
-                {Object.entries(weeklyStats).map(([week]) =>(
+                {Object.keys(weeklyStats)
+                    .sort()
+                    .map((week) => (
                 <option key={week} value={week}>
                     {week}
                 </option>

@@ -25,7 +25,7 @@ function AddActSessionForm() {
               activity: { id: selectedActivityId },
               actStart: startTime,
               actEnd: endTime,
-              //duration: null // Beräknas i Backend
+              //durationSecond beräknas i Backend
             })
           }).then(() => {
             setSelectedActivityId("");
@@ -36,28 +36,31 @@ function AddActSessionForm() {
         
         return (
           <div>
-            <form onSubmit={handleSubmit}>
-              <select value={selectedActivityId} onChange={e => setSelectedActivityId(e.target.value)}
-              required>
-                <option value="" disabled>Select activity</option>
-                {activities.map(activity => (
-                  <option key={activity.id} value={activity.id}>
-                    {activity.activityName}
-                  </option>
-                ))}
-              </select>
-              <input
-                type="datetime-local"
-                value={startTime}
-                onChange={e => setStartTime(e.target.value)}
-              required/>
-              <input
-                type="datetime-local"
-                value={endTime}
-                onChange={e => setEndTime(e.target.value)}
-                required/>
-              <button>Save Session</button>
-            </form>
+            <h3>Enter manually:</h3>
+              <div>
+                <form className="flex" onSubmit={handleSubmit}>
+                  <select value={selectedActivityId} onChange={e => setSelectedActivityId(e.target.value)}
+                  required>
+                    <option value="" disabled>Select activity</option>
+                    {activities.map(activity => (
+                      <option key={activity.id} value={activity.id}>
+                        {activity.activityName}
+                      </option>
+                    ))}
+                  </select>
+                  <input
+                    type="datetime-local"
+                    value={startTime}
+                    onChange={e => setStartTime(e.target.value)}
+                  required/>
+                  <input
+                    type="datetime-local"
+                    value={endTime}
+                    onChange={e => setEndTime(e.target.value)}
+                    required/>
+                  <button>Save Session</button>
+                </form>
+              </div>
           </div>
         );
 }

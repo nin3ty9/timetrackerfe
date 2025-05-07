@@ -11,6 +11,7 @@ function AddActivityForm() {
 
     const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+        if (!inputNewActivity) return alert("Please name the activity first.");
         console.log("Spara formulär");
         fetch("http://localhost:8080/api/activity", {
             method: "POST",
@@ -23,8 +24,7 @@ function AddActivityForm() {
     }
         
     return (
-        <form onSubmit={handleSubmit}>
-            {inputNewActivity} <br/>
+        <form className="flex" onSubmit={handleSubmit}>
             <input type="text" value={inputNewActivity} onChange={handleChange} />
             <button>Save</button>
         </form>

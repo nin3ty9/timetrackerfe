@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { ActSession } from "../types/ActSession";
 import { formatDuration } from "../utils/formatDuration";
 import AddActSessionForm from "../components/AddActSessionForm";
+import TrackActSessionForm from "../components/TrackActSessionForm";
 
 function ActSessions() {
 
@@ -17,13 +18,14 @@ function ActSessions() {
 
     return (
         <div>
-            <h2>New activity session:</h2>
+            <h2>Track a new activity session or enter one manually:</h2>
             {/* Skickar props (metoden för att lägga till aktivitet) till formuläret i AddActivityForm: */}
+            <TrackActSessionForm />
             <AddActSessionForm /> 
             <h3>Saved activity Sessions:</h3>
             {/* Mappar sessionerna i listan till varsin div för att rendera aktivitetsnamnen: */}
             {actSessions.map((actSession: ActSession) => (
-                    <div key={actSession.sessionId}>{actSession.activity.activityName}
+                    <div className="flex" key={actSession.sessionId}>{actSession.activity.activityName}
                     <p>{formatDuration(actSession.durationSeconds)}</p>
                     </div>
                 ))}
