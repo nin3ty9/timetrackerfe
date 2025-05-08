@@ -11,7 +11,8 @@ function Activities() {
 
     //useEffect som vid sidladdning hämtar aktiviteter från databasen och lagrar dem i listan:
     useEffect(() => {
-        fetch("http://localhost:8080/api/activities")
+        // fetch("http://localhost:8080/api/activities")
+        fetch(`${import.meta.env.VITE_API_URL}/api/activities`)
         .then(res => res.json())
         .then(data => setActivities(data));
     });
@@ -30,7 +31,8 @@ function Activities() {
         e.preventDefault();
         if (!editingActivityId) return;
 
-        await fetch(`http://localhost:8080/api/activity/${editingActivityId}`, {
+        // await fetch(`http://localhost:8080/api/activity/${editingActivityId}`, {
+        await fetch(`${import.meta.env.VITE_API_URL}/api/activity/${editingActivityId}`, {
             method: "PATCH",
             headers: {
             "Content-Type": "application/json",

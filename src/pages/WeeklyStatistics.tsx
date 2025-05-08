@@ -7,7 +7,8 @@ function WeeklyStatistics() {
   const [selectedWeek, setSelectedWeek] = useState<string>("");
 
   useEffect(() => {
-    fetch("http://localhost:8080/api/actSessions/totalStatsByWeek")
+    // fetch("http://localhost:8080/api/actSessions/totalStatsByWeek")
+    fetch(`${import.meta.env.VITE_API_URL}/api/actSessions/totalStatsByWeek`)
       .then((res) => res.json())
       .then((data: WeeklyStats) => setWeeklyStats(data))
       .catch((err) => console.error("Failed to fetch weekly stats:", err));

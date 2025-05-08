@@ -11,14 +11,16 @@ function AddActSessionForm() {
 
     //useEffect som vid sidladdning hämtar aktiviteter från databasen och lagrar dem i listan:
     useEffect(() => {
-        fetch("http://localhost:8080/api/activities")
+        // fetch("http://localhost:8080/api/activities")
+        fetch(`${import.meta.env.VITE_API_URL}/api/activities`)
         .then(res => res.json())
         .then(data => setActivities(data));
     })
 
     const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        fetch("http://localhost:8080/api/actSession", {
+        // fetch("http://localhost:8080/api/actSession", {
+        fetch(`${import.meta.env.VITE_API_URL}/api/actSession`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({

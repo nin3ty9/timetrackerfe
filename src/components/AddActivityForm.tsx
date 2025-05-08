@@ -13,7 +13,8 @@ function AddActivityForm() {
         e.preventDefault();
         if (!inputNewActivity) return alert("Please name the activity first.");
         console.log("Spara formulär");
-        fetch("http://localhost:8080/api/activity", {
+        // fetch("http://localhost:8080/api/activity", {
+        fetch(`${import.meta.env.VITE_API_URL}/api/activity`, {
             method: "POST",
             headers: {
                 "content-type": "application/json"
