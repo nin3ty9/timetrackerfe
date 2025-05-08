@@ -20,7 +20,6 @@ function ActSessions() {
     return (
         <div>
             <h2>Track a new activity session or enter one manually:</h2>
-            {/* Skickar props (metoden för att lägga till aktivitet) till formuläret i AddActivityForm: */}
             <TrackActSessionForm />
             <AddActSessionForm /> 
             <h3>Saved activity Sessions:</h3>
