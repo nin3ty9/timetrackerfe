@@ -19,29 +19,29 @@ function Activities() {
     const startEditing = (id: string, currentName: string) => {
         setEditingActivityId(id);
         setEditedName(currentName);
-      };
+    };
     
-      const cancelEditing = () => {
+    const cancelEditing = () => {
         setEditingActivityId(null);
         setEditedName("");
-      };
+    };
     
-      const handleEditSubmit = async (e: FormEvent) => {
+    const handleEditSubmit = async (e: FormEvent) => {
         e.preventDefault();
         if (!editingActivityId) return;
-    
+
         await fetch(`http://localhost:8080/api/activity/${editingActivityId}`, {
-          method: "PATCH",
-          headers: {
+            method: "PATCH",
+            headers: {
             "Content-Type": "application/json",
         },
         body: JSON.stringify({ activityName: editedName }),
-    })
+        })
 
-    setActivities((prev) =>
-        prev.map((a) =>
-          a.id === editingActivityId ? { ...a, activityName: editedName } : a
-        ));
+        setActivities((prev) =>
+            prev.map((a) =>
+            a.id === editingActivityId ? { ...a, activityName: editedName } : a
+            ));
 
         cancelEditing();
     }

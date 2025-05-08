@@ -31,8 +31,6 @@ function WeeklyStatistics() {
                 ))}
             </select>
         </div>
-
-
         <div key={selectedWeek}>
           <h3>{selectedWeek}</h3>
           <ul>
