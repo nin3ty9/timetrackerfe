@@ -11,7 +11,8 @@ function ActSessions() {
 
     //useEffect som vid sidladdning hämtar aktivitetssessioner från databasen och lagrar dem i listan:
     useEffect(() => {
-        fetch("http://localhost:8080/api/actSessions")
+        // fetch("http://localhost:8080/api/actSessions")
+        fetch(`${import.meta.env.VITE_API_URL}/api/actSessions`)
           .then(res => res.json())
           .then(data => setActSessions(data));
       });

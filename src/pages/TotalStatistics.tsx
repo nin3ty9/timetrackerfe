@@ -6,7 +6,8 @@ function TotalStatistics() {
     const [activityTotals, setActivityTotals] = useState<Map<string, number>>(new Map());
 
     useEffect(() => {
-    fetch("http://localhost:8080/api/actSessions/totalStats")
+    // fetch("http://localhost:8080/api/actSessions/totalStats")
+    fetch(`${import.meta.env.VITE_API_URL}/api/actSessions/totalStats`)
         .then(res => res.json())
         .then(data => {
             const entries = Object.entries(data) as [string, number][];

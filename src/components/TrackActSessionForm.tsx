@@ -8,7 +8,8 @@ function TrackActSessionForm() {
     const [startTime, setStartTime] = useState<Date | null>(null);
 
     useEffect(() => {
-        fetch("http://localhost:8080/api/activities")
+        // fetch("http://localhost:8080/api/activities")
+        fetch(`${import.meta.env.VITE_API_URL}/api/activities`)
           .then(res => res.json())
           .then(data => setActivities(data));
     }, []);
@@ -31,7 +32,8 @@ function TrackActSessionForm() {
             durationSeconds,
         }
 
-        fetch("http://localhost:8080/api/actSession", {
+        // fetch("http://localhost:8080/api/actSession", {
+        fetch(`${import.meta.env.VITE_API_URL}/api/actSession`, {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
