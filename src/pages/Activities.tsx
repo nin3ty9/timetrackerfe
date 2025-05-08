@@ -4,7 +4,7 @@ import AddActivityForm from "../components/AddActivityForm";
 
 function Activities() {
 
-    //State för vad som finns i listan med aktiviteter:
+    //State för vad som finns i listan med aktiviteter, för vilken vi vill ändra och nytt namn:
     const [activities, setActivities] = useState<Activity[]>([]);
     const [editingActivityId, setEditingActivityId] = useState<string | null>(null);
     const [editedName, setEditedName] = useState<string>("");
@@ -26,10 +26,10 @@ function Activities() {
         setEditingActivityId(null);
         setEditedName("");
     };
-    
+    //Kollar om vi valt aktivitet att ändra och sparar i så fall nytt namn:
     const handleEditSubmit = async (e: FormEvent) => {
         e.preventDefault();
-        if (!editingActivityId) return;
+        if (editedName === "") return alert ("Please choose a new activity name");
 
         // await fetch(`http://localhost:8080/api/activity/${editingActivityId}`, {
         await fetch(`${import.meta.env.VITE_API_URL}/api/activity/${editingActivityId}`, {

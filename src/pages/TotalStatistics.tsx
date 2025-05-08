@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { formatDuration } from "../utils/formatDuration";
 
 function TotalStatistics() {
-
+    //State för aktivitetsstatistiken:
     const [activityTotals, setActivityTotals] = useState<Map<string, number>>(new Map());
 
     useEffect(() => {

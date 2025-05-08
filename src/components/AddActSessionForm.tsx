@@ -3,7 +3,7 @@ import { Activity } from '../types/Activity';
 
 function AddActSessionForm() {
 
-    //State för vad som finns i listan med aktiviteter:
+    //State för vad som finns i listan med aktiviteter, vald aktivitet, start-tid och slut-tid:
     const [activities, setActivities] = useState<Activity[]>([]);
     const [selectedActivityId, setSelectedActivityId] = useState("");
     const [startTime, setStartTime] = useState("");

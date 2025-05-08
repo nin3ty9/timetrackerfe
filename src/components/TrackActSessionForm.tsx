@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Activity } from "../types/Activity";
 
 function TrackActSessionForm() {
-
+    //State för tillgängliga aktiviteter, vald aktivitet, start-tid och slut-tid: 
     const [activities, setActivities] = useState<Activity[]>([]);
     const [selectedActivityId, setSelectedActivityId] = useState("");
     const [startTime, setStartTime] = useState<Date | null>(null);
@@ -13,12 +13,12 @@ function TrackActSessionForm() {
           .then(res => res.json())
           .then(data => setActivities(data));
     }, []);
-
+    //Startar session:
     const handleStartClick = () => {
         if (!selectedActivityId) return alert("Please select an activity first.");
         setStartTime(new Date());
     }
-
+    //Avslutar session, beräknar tid i sekunder och sparar:
     const handleEndClick = () => {
         if (!startTime) return alert("You haven't started a session.");
 
