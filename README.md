@@ -11,11 +11,12 @@ up your own MongoDB database** to handle saved activities and activity sessions.
 The frontend is made with React + Typescript + Vite and the backend is a Spring Boot api.
 **Start by setting up the backend and database,** then configure a few things in frontend:
 
-Option 1: The fetch paths for running local are commented out and replaced with production paths, **those
-all need to be swapped around,** OR:
+Option 1: The fetch paths (in all pages and components) for running local are commented out and replaced
+with production paths, **those all need to be swapped around,** OR:
 
 Option 2: You can **create your own .env-file in the root folder with the correct variable to use current
-fetch paths locally (.env content should be like <VITE_API_URL=http://localhost:8080>).**
+fetch paths locally (.env content should be like <VITE_API_URL=http://localhost:8080>). The port needs
+match the port configured in application.properties in the backend.**
 
 When the backend is up and running with a database, type "npm run dev" into your IDE terminal to run
 the frontend, then ctrl+click the link in the terminal to open it in your browser.
