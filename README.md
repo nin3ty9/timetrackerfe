@@ -1,3 +1,27 @@
+# TimeTracker Frontend
+
+This application serves as the frontend of my TimeTracker api (timetrackerbe).
+The idea of the application is to track the amount of time the user spends on different activities
+and get total and weekly statistics on time use.
+
+# Setup
+
+To run this app locally, you need to clone both this repo and the backend repo, as well as setting
+up your own MongoDB database to handle saved activities and activity sessions.
+The frontend is made with React + Typescript + Vite and the backend is a Spring Boot api.
+Start by setting up the backend and database, then configure a few things in frontend:
+
+Option 1: The fetch paths for running local are commented out and replaced with production paths, those
+all need to be swapped around, OR:
+
+Option 2: You can create your own .env-file in the root folder with the correct variable to use current
+fetch paths locally (like <VITE_API_URL=http://localhost:8080>).
+
+When the backend is up and running with a database, type "npm run dev" into your IDE terminal to run
+the frontend, then ctrl+click the link in the terminal to open it in your browser.
+
+-------------------------------------------------------------------------------------------------------
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
